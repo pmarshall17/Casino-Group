@@ -42,7 +42,7 @@ class Casino
 
 	def welcome_menu
 		puts "***Welcome to DPL Casino***".colorize(:magenta)
-		puts "You may choose to swap players at any time by pressing '9'"
+		puts "You may choose to swap players at any time by pressing '9'".colorize(:blue)
 		print "Please enter your player name: ".colorize(:blue)
 		user_name = gets.strip
 		print "How much money will we be playing with today?: ".colorize(:blue)
@@ -61,7 +61,7 @@ class Casino
 		puts "-" * 10
 		puts "Which game would you like to play today?"
 		puts "-" * 10
-		puts "Your options are:" + "\n1:Slots\n2:High/Low\n3:Rock-Paper-Scissors\n4:Exit\n9:Enter New PLayer Name\n10:Change Players".colorize(:yellow)
+		puts "Your options are:" + "\n1:Slots\n2:High/Low\n3:Rock-Paper-Scissors\n4:Exit\n9:Enter new player name\n10:Change players".colorize(:yellow)
 		case gets.strip.to_i
 		
 		when 1
