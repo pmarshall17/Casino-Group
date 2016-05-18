@@ -21,32 +21,36 @@ class HiLow
 		user_card = deck.pop
 		puts "Your card shows #{user_card.rank} of #{user_card.suit}"
 
+		#set background color to prompts as one color here 
+
 		house_value = Mechanics::Deck.find_card(house_card)
 		user_value = Mechanics::Deck.find_card(user_card)
 			case choice
 			when "h"
 				if house_value < user_value
-					puts "Congratulations, you win #{wager}!"
+					puts "Congratulations, you win #{wager}!".colorize(:purple)
 					return wager
 				elsif user_value < house_value
-					"Sorry, you lose"
+					"Sorry, you lose".colorize(:red)
 					return wager * -1
 				else 
-					puts "you pushed. let's play again"
+					puts "you pushed. let's play again".colorize(:blue)
 					puts 0
 				end
 			when 'l' 
 				if house_value > user_value
-					puts "Congratulations, you win #{wager}!"
+					puts "Congratulations, you win #{wager}!".colorize(:purple)
 					return wager
 				elsif user_value > house_value
-					puts "Sorry, you lose"
+					puts "Sorry, you lose".colorize(:red)
 					return wager * -1
 				else 
-					puts "push. play again"
+					puts "push. play again".colorize(:blue)
 					return 0
 				end
 			end	
 		end
 	end
 end
+
+puts "-" * 10
